@@ -106,3 +106,13 @@ The above actions can be combined into a single call in the following order.
 5) '?' if you want the template to run whether or not the object (or objects in loop) is found
 
 \* You can add '=', '!', '=val', '!val', '<val', >val' in chain to run comparison only if '%num' wasn't found or chain starts with '%' and was used without 'num'.
+
+\* Separating non-condition calls (not ending in !val, =val, <val, or >val) with ';' will cause it to retrieve all objects and populate the template for each object it finds.
+
+\* Separating condition calls (ending in !val, =val, <val, or >val) with ';' will cause it to return 'true' as long as one of the conditions passes.
+
+Escaping Characters
+-------------------
+- Place '\' directly before '{' or '}' characters if you want them to be written to the output instead of being treated as opening and closing brackets.
+- Place '\' directly before ';', '#', '%', '?', '!', '=', '<', or '>' characters between opening bracket and pipe (or closing bracket if pipe isn't used) if you want them to be treated as part of the key for retrieving the object.
+- If the '#', '%', '?', '!', '=', '<', or '>' character exists outside of any brackets or after the pipe character and before the closing bracket, it doesn't need to be escaped. 
