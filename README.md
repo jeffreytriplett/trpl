@@ -2,6 +2,8 @@ TRPL Instructions
 =================
 - Include trpl.js in your project.
 - Use trpl.process(s, d) to populate a template (from string 's') with data (from object 'd').  The function will return the resulting string.
+- Include trpl.html.js in your project to use trpl.processElement(e, d).  This function will process the template held in the first comment of DOM element 'e' with object 'd' and write the output inside of 'e'.
+- trpl.html.js is just one way to use TRPL.  You can decide to just use trpl.js and find your own way to pass in the template and use the resulting string.  This allows it to be used in node.js as a server side templating engine if you want.
 - The follwing explains how to code the templates...
 
 Accessing objects
