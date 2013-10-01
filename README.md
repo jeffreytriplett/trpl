@@ -72,10 +72,15 @@ Conditions
 Chaining
 --------
 The above actions can be combined into a single call in the following order.  
+
 1) Parent '$' symbols to get the parent object to read from.
+
 2) 'id's separated by '$' symbols to get child object.  If 'id' is an integer and object being retrieved from is an array, it will access the element at that index (1-based).
+
 3) '#' to get length or '#num' to split up array
+
 4) '%' if 1-3 are empty or '%num' to loop through elements in array
+
 5) '?' if you want the template to run whether or not the object (or objects in loop) is found
 
 * You can add '=', '!', '=val', '!val', '<val', >val' in chain to run comparison only if '%num' wasn't found or chain starts with '%' and was used without 'num'.
