@@ -1,0 +1,230 @@
+<!doctype html>
+<html>
+<head>
+<script>
+
+// Place trpl.js and trpl.html.js here
+console.log("This example requires trpl.js and trpl.html.js");
+
+</script>
+<script>
+
+var data = {
+	nav: [{
+		label: "Home",
+		path: "/"
+	},{
+		label: "Past",
+		path: "/past/"
+	},{
+		label: "Present",
+		path: "/present/"
+	},{
+		label: "Future",
+		path: "/future/"
+	}],
+	stories: {
+		feature: {
+			title: "Cras interdum ante sapien ornare tempus",
+			path: "/lorem-ipsum/",
+			summary: "Pellentesque aliquet eu risus non lobortis. Proin rhoncus lacus auctor eros accumsan suscipit. Vivamus suscipit quam. Pellentesque aliquet eu risus non lobortis. Proin rhoncus lacus auctor eros accumsan suscipit. Vivamus suscipit quam."
+		},
+		popular: [{
+			title: "Aliquam iaculis ligula eu purus lacinia",
+			path: "/lorem-ipsum/",
+			summary: "Nullam aliquet vestibulum odio in dictum. Proin erat urna, lacinia ac laoreet non, volutpat vel lectus."
+		},{
+			title: "Sed dapibus dapibus metus vel varius",
+			path: "/lorem-ipsum/",
+			summary: "Donec viverra lacus quis neque fermentum, eget aliquet tortor malesuada. Cras a accumsan velit. Donec tincidunt."
+		},{
+			title: "Duis accumsan vitae odio et volutpat",
+			path: "/lorem-ipsum/",
+			summary: "Ut lectus sem, molestie tempus iaculis non, pulvinar sit amet mi. Quisque nec sapien blandit, euismod."
+		},{
+			title: "Suspendisse quis ante mollis facilisis ante",
+			path: "/lorem-ipsum/",
+			summary: "Vivamus rhoncus lobortis iaculis. Duis blandit erat nunc, vitae placerat sem mollis vel. Cras tristique sit."
+		}],
+		recent: [{
+			title: "Suspendisse nec varius quam ac porttitor",
+			path: "/lorem-ipsum/",
+			summary: "Duis eget volutpat augue. Morbi vel tincidunt nisi. Maecenas luctus feugiat tortor vitae posuere. Suspendisse accumsan."
+		},{
+			title: "Cras vitae hendrerit elit ac dignissim.",
+			path: "/lorem-ipsum/",
+			summary: "Nam ac quam est. Morbi pharetra pharetra ipsum. Suspendisse mollis purus lacus, at volutpat ante facilisis."
+		},{
+			title: "Suspendisse quis ante mollis facilisis ante",
+			path: "/lorem-ipsum/",
+			summary: "Vivamus rhoncus lobortis iaculis. Duis blandit erat nunc, vitae placerat sem mollis vel. Cras tristique sit."
+		},{
+			title: "Suspendisse nec varius quam ac porttitor",
+			path: "/lorem-ipsum/",
+			summary: "Duis eget volutpat augue. Morbi vel tincidunt nisi. Maecenas luctus feugiat tortor vitae posuere. Suspendisse accumsan."
+		},{
+			title: "Cras vitae hendrerit elit ac dignissim.",
+			path: "/lorem-ipsum/",
+			summary: "Nam ac quam est. Morbi pharetra pharetra ipsum. Suspendisse mollis purus lacus, at volutpat ante facilisis."
+		},{
+			title: "Suspendisse quis ante mollis facilisis ante",
+			path: "/lorem-ipsum/",
+			summary: "Vivamus rhoncus lobortis iaculis. Duis blandit erat nunc, vitae placerat sem mollis vel. Cras tristique sit."
+		},{
+			title: "Cras vitae hendrerit elit ac dignissim.",
+			path: "/lorem-ipsum/",
+			summary: "Nam ac quam est. Morbi pharetra pharetra ipsum. Suspendisse mollis purus lacus, at volutpat ante facilisis."
+		},{
+			title: "Suspendisse quis ante mollis facilisis ante",
+			path: "/lorem-ipsum/",
+			summary: "Vivamus rhoncus lobortis iaculis. Duis blandit erat nunc, vitae placerat sem mollis vel. Cras tristique sit."
+		}]
+	},
+	page: {
+		overview: "Nunc pellentesque turpis eget eros euismod varius. Nullam nibh dolor, elementum commodo interdum in, rhoncus aliquet nulla. Maecenas euismod congue molestie. Duis eget justo purus. Nunc vestibulum facilisis est vel faucibus. Aliquam vulputate semper accumsan. Ut pulvinar mauris sit amet diam fringilla, eget scelerisque ante sagittis. Sed posuere.",
+		tags: [{
+			label: "curabitur",
+			path: "/curabitur/"
+		},{
+			label: "risus",
+			path: "/risus/"
+		},{
+			label: "bibendum",
+			path: "/bibendum"
+		},{
+			label: "neque",
+			path: "/neque/"
+		},{
+			label: "fermentum",
+			path: "/fermentum/"
+		},{
+			label: "curabitur",
+			path: "/curabitur/"
+		},{
+			label: "bibendum",
+			path: "/bibendum"
+		},{
+			label: "neque",
+			path: "/neque/"
+		},{
+			label: "risus",
+			path: "/risus/"
+		},{
+			label: "fermentum",
+			path: "/fermentum/"
+		}]
+	},
+	about: {
+		label: "About Us",
+		path: "/about-us/"
+	},
+	contact: {
+		label: "Contact Us",
+		path: "/about-us/"
+	}
+};
+
+window.onload = function() {
+	var start = new Date();
+	trpl.processElement(document.body, data);
+	var end = new Date();
+	console.log("all rendered in " + (end.getTime() - start.getTime()) + " milliseconds");
+};
+	
+</script>
+<style>
+	
+.container{width:940px;position:relative;left:50%;margin-left:-470px}
+.row{display:table;width:960px;margin-left:-20px}
+.half,.third,.fourth,.sixth{display:block;float:left;margin-left:20px;margin-bottom:20px}
+.half{width:460px}
+.third{width:300px}
+.fourth{width:220px}
+.sixth{width:140px}
+.nav a{text-align:center;background:#ccc;color:#444;font-size:24px;text-decoration:none;padding:6px 0}
+.nav .active{background:#888;color:#ddd}
+h2 a,h3 a,h4 a{text-decoration:none;color:#004}
+h2 a:hover,h3 a:hover,h4 a:hover{text-decoration:underline}
+.search{font-size:24px;cursor:pointer;background:0;border:0;font-family:'Times New Roman';text-align:left;padding:0;margin-top:0}
+.tags a{display:block;width:100%;text-align:center;color:#008}
+.small-img{height:80px;background:#ccc}
+.medium-img{display:inline-block;width:100%;height:240px;background:#ccc}
+.narrow-bottom{margin-bottom:5px}
+.first{margin-top:0}
+.right{float:right}
+	
+</style>
+</head>
+<body>
+	
+<!--
+	<div class="container">
+		<div class="row nav">
+			{nav%1|
+				<a href="{path}" class="fourth{path=/present/| active}">{label}</a>
+			}
+		</div>
+		<p class="first">{page$overview}</p>
+		{stories|
+			<div class="row">
+				{feature|
+					<div class="half">
+						<span class="medium-img"></span>
+						<h2><a href="{path}">{title}</a></h2>
+						<p>{summary}</p>
+					</div>
+				}
+				{popular|
+					<div class="half">
+						{%1|
+							{%<4|
+								<span class="small-img sixth right"></span>
+								<h3{%=1| class="first"}><a href="{path}">{title}</a></h3>
+								<p>{summary}</p>
+							}
+						}
+					</div>
+				}
+			</div>
+			{recent%4|
+				<div class="row">
+					{%1|
+						{$%<-1;%<3|
+							<div class="fourth">
+								<h4 class="first"><a href="{path}">{title}</a></h4>
+								<p>{summary}</p>
+							</div>
+						}
+					}
+					{%=-1|
+						<div class="half">
+							<form action="/search/" class="row">
+								<input type="text" name="q" class="third narrow-bottom" />
+								<input type="submit" class="search sixth narrow-bottom" value="Search" />
+							</form>
+							<div class="narrow-bottom">The following {$$page$tags#} tags relate to the stories on this page</div>
+							<div class="row tags">
+								{$$page$tags#3%1|
+									<div class="sixth">
+										{%1|
+											<a href="{path}">{label}</a>
+										}
+									</div>
+								}
+							</div>
+						</div>
+					}
+				</div>
+			}
+		}
+		<div class="row nav">
+			<span class="half">TRPL \{2013\}</span>
+			{about;contact|
+				<a href="{path}" class="sixth right">{label}</a>
+			}
+		</div>
+	</div>
+-->
+
+</body>
+</html>
