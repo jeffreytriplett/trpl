@@ -8,68 +8,88 @@ TRPL Instructions
 
 Accessing objects
 -----------------
-{id} --> Writes value located at 'id' in the current object to the output.
-  --> If value located at 'id' is an object, it will write a string representation of the object
-  --> If value is undefined, null, an empty string or empty array, it will be ignored
+{id}
+- Writes value located at 'id' in the current object to the output.<br>
+- If value located at 'id' is an object, it will write a string representation of the object<br>
+- If value is undefined, null, an empty string or empty array, it will be ignored
   
-{id| template } -->  Reads value located at 'id' in the current object and uses that new object for the template between the brackets.
-  --> If value is undefined, null, an empty string or empty array, it will be ignored
+{id| template }
+- Reads value located at 'id' in the current object and uses that new object for the template between the brackets.<br>
+- If value is undefined, null, an empty string or empty array, it will be ignored
 
 Parents
 -------
-{$} --> Writes the object used in the bracket surrounding the current bracket to output.
-  --> can use multiple '$'s to access parents further up
+{$}
+- Writes the object used in the bracket surrounding the current bracket to output.<br>
+- can use multiple '$'s to access parents further up
   
-{$| template } --> Retrieves the object used in the bracket surrounding the current bracket and uses it for the template inside this set of brackets.
-  --> can use multiple '$'s to access parents further up
+{$| template }
+- Retrieves the object used in the bracket surrounding the current bracket and uses it for the template inside this set of brackets.<br>
+- can use multiple '$'s to access parents further up
 
 Arrays
 ------
-{#} --> Writes the length of the current object to the output.
+{#}
+- Writes the length of the current object to the output.
 
-{#num| template } --> Creates a new array by splitting the current array into 'num' equal parts and uses the new array for the template between the brackets.
-  --> If 'num' is positive, the elements that are left over from the division will be spread evenly into the first elements in the array.
-  --> If 'num' is negative, the elements that are left over from the division will be spread evenly into the last elements in the array.
+{#num| template }
+- Creates a new array by splitting the current array into 'num' equal parts and uses the new array for the template between the brackets.<br>
+- If 'num' is positive, the elements that are left over from the division will be spread evenly into the first elements in the array.<br>
+- If 'num' is negative, the elements that are left over from the division will be spread evenly into the last elements in the array.
 
 Loops
 -----
-{%} --> Writes the counter of the current loop to the output (1-based).
+{%}
+- Writes the counter of the current loop to the output (1-based).
 
-{%num| template } --> Splits current array into sets of 'num' elements and populates the template between the brackets for each set.
-  --> If 'num' is negative it will read the array in reverse order when creating the sets.
-  --> If 'num' equals 1 (or -1), it will populate the template between the brackets with each element in the array.
+{%num| template }
+- Splits current array into sets of 'num' elements and populates the template between the brackets for each set.<br>
+- If 'num' is negative it will read the array in reverse order when creating the sets.<br>
+- If 'num' equals 1 (or -1), it will populate the template between the brackets with each element in the array.
 
-* use '?' after any of the above calls to force it to use the value even if it is undefined or null.
-  --> using '?' after a loop will force it to use each value in the array
+\*use '?' after any of the above calls to force it to use the value even if it is undefined or null.<br>
+\*using '?' after a loop will force it to use each value in the array
 
 Conditions
 ----------
-{=} --> Writes 'true' if current object exists.  Writes 'false' otherwise.  (note: will always be 'true' unless object was retrieved with '?', then it could be either 'true' or 'false')
+{=}
+- Writes 'true' if current object exists.  Writes 'false' otherwise.  (note: will always be 'true' unless object was retrieved with '?', then it could be either 'true' or 'false')
 
-{!} --> Writes 'true' if current object does not exist. Writes 'false' otherwise. (note: object must have been retrieved with '?' for this to even have the possibility of returning 'true')
+{!}
+- Writes 'true' if current object does not exist. Writes 'false' otherwise. (note: object must have been retrieved with '?' for this to even have the possibility of returning 'true')
 
-{=| tempalate } --> Populates template if current object exists.  (note: will always be 'true' unless object was retrieved with '?', then it could be either 'true' or 'false')
+{=| tempalate }
+- Populates template if current object exists.  (note: will always be 'true' unless object was retrieved with '?', then it could be either 'true' or 'false')
 
-{!| tempalate } --> Populates template if current object does not exist.  (note: object must have been retrieved with '?' for this to even have the possibility of returning 'true')
+{!| tempalate }
+- Populates template if current object does not exist.  (note: object must have been retrieved with '?' for this to even have the possibility of returning 'true')
 
-{=val} --> Writes 'true' if current object is equal to 'val'.  Writes 'false' otherwise.
+{=val}
+- Writes 'true' if current object is equal to 'val'.  Writes 'false' otherwise.
 
-{!val} --> Writes 'true' if current object is not equal to 'val'.  Writes 'false' otherwise.
+{!val}
+- Writes 'true' if current object is not equal to 'val'.  Writes 'false' otherwise.
 
-{<val} --> Writes 'true' if current object is less than 'val'.  Writes 'false' otherwise.
+{<val}
+- Writes 'true' if current object is less than 'val'.  Writes 'false' otherwise.
 
-{>val} --> Writes 'true' if current object is greater than 'val'.  Writes 'false' otherwise.
+{>val}
+- Writes 'true' if current object is greater than 'val'.  Writes 'false' otherwise.
 
-{=val| template } --> Populates template if object equals 'val'.
+{=val| template }
+- Populates template if object equals 'val'.
 
-{!val| template } --> Populates template if object does not equal 'val'.
+{!val| template }
+- Populates template if object does not equal 'val'.
 
-{<val| template } --> Populates template if object is less than 'val'.
+{<val| template }
+- Populates template if object is less than 'val'.
 
-{>val| template } --> Populates template if object is greater than 'val'.
+{>val| template }
+- Populates template if object is greater than 'val'.
 
-* If the current object represents the index of a loop and 'val' is a negative integer, 'val' will represent the index from the end of the array.
-* The template inside a bracket with condition symbols will continue to use object that was being used before.
+\* If the current object represents the index of a loop and 'val' is a negative integer, 'val' will represent the index from the end of the array.<br>
+\* The template inside a bracket with condition symbols will continue to use object that was being used before.
 
 Chaining
 --------
@@ -85,4 +105,4 @@ The above actions can be combined into a single call in the following order.
 
 5) '?' if you want the template to run whether or not the object (or objects in loop) is found
 
-* You can add '=', '!', '=val', '!val', '<val', >val' in chain to run comparison only if '%num' wasn't found or chain starts with '%' and was used without 'num'.
+\* You can add '=', '!', '=val', '!val', '<val', >val' in chain to run comparison only if '%num' wasn't found or chain starts with '%' and was used without 'num'.
