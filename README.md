@@ -33,7 +33,7 @@ Arrays
 - Writes the length of the current object to the output.
 
 {#num| template }
-- Creates a new array by splitting the current array into 'num' equal parts and uses the new array for the template between the brackets.<br>
+- Breaks the array into 'num' equally sized sets and populates the template between the brackets for each set.<br>
 - If 'num' is positive, the elements that are left over from the division will be spread evenly into the first elements in the array.<br>
 - If 'num' is negative, the elements that are left over from the division will be spread evenly into the last elements in the array.
 
